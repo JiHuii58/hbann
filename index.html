@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Combined Anniversary Page</title>
+	<link rel="stylesheet" href="styles.css">
+	<style>
+		/* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            color: #333;
+            text-align: center;
+        }
+
+        .container {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff6f61;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #e55d50;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .gallery {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            border-radius: 10px;
+            width: 30%;
+            max-width: 200px;
+            height: auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        video {
+            width: 35%; /* Chỉnh video nhỏ hơn */
+            max-width: 400px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        img {
+            width: 30%; /* Hình ảnh trang đầu nhỏ lại */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .scrolling-text {
+            font-size: 2rem;
+            color: #ff6f61;
+            animation: scrollText 3s linear infinite alternate;
+        }
+
+        @keyframes scrollText {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(50%); }
+        }
+
+        /* Các đoạn văn bản */
+        .message {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #ff6f61;
+            font-style: italic;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #ff6f61;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .bold-message {
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: #e55d50;
+            margin-top: 10px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-message {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.5rem;
+            color: #ff6f61;
+            margin-top: 20px;
+            animation: bounceIn 2s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: translateY(50px); opacity: 0; }
+            60% { transform: translateY(-10px); opacity: 1; }
+            100% { transform: translateY(0); }
+        }
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1>Happy 3rd Month Anniversary</h1>
+
+	<!-- Navigation -->
+	<div id="navigation">
+		<button onclick="showSection('home')">Em</button>
+		<button onclick="showSection('memories')">Bé</button>
+		<button onclick="showSection('gift')">Jen</button>
+	</div>
+
+	<!-- Home Section -->
+	<div id="home">
+		<h1>🌟 Happy 3rd Month Anniversary 🌟</h1>
+		<div class="cake-image">
+			<img src="cake.jpg" alt="Cake">
+		</div>
+		<p class="message">
+			"Today is November 21st ahh our 3 month anniversary, although it's not too long but Huy is very happy because he is still counting each day 😘"
+		</p>
+		<p class="message">
+			"Wish Jennie always happy and study well and still love Huy and be sweet to Huy. We have lost a lot lately; hope Jennie is not sad and just know that we spend time together 😘💗"
+		</p>
+		<p class="bold-message">
+			"Huy iu em bé nhiều, hun hun em bé 😘"
+		</p>
+		<p class="message">
+			"Huy will still try his best for Jennie 💪"
+		</p>
+		<div>
+			<button id="playMusic">Play Music 🎶</button>
+			<button id="showFireworks">Fireworks & Balloons 🎆</button>
+		</div>
+		<audio id="bgMusic" loop>
+			<source src="music.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+		</audio>
+	</div>
+
+	<!-- Memories Section -->
+	<div id="memories" class="hidden">
+		<h1>🌟 Cute Page 🌟</h1>
+		<div class="big-image" style="background-image: url('/static/images/hpan.jpg');">
+			<div class="scrolling-text">我爱你 (Wǒ ài nǐ) - I love you 💖</div>
+		</div>
+		<div class="gallery">
+			<img src="we.jpg" alt="We">
+			<img src="kiniemwe.jpg" alt="Memory">
+			<img src="hun.jpg" alt="Hug">
+		</div>
+	</div>
+
+	<!-- Gift Section -->
+	<div id="gift" class="hidden">
+		<h1>🌹 Last Page 🌹</h1>
+		<div class="video-message">
+			<p>💖 This is Jennie's video for Huy 💖</p>
+			<video controls>
+				<source src="jennie.mp4" type="video/mp4">
+				Your browser does not support the video element.
+			</video>
+		</div>
+		<div>
+			<button id="triggerFireworks">Release Fireworks 🌟</button>
+			<button id="triggerHeartEffect">Send Love 💖</button>
+		</div>
+	</div>
+</div>
+
+<script>
+	function showSection(sectionId) {
+        document.querySelectorAll('.container > div:not(#navigation)').forEach(section => {
+            section.classList.add('hidden');
+        });
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    document.getElementById('playMusic').addEventListener('click', () => {
+        const music = document.getElementById('bgMusic');
+        if (music.paused) {
+            music.play();
+        } else {
+            music.pause();
+        }
+    });
+
+    document.getElementById('showFireworks').addEventListener('click', () => {
+        createEffect('🎆🎈');
+    });
+
+    document.getElementById('triggerFireworks').addEventListener('click', () => {
+        createEffect('🎆');
+    });
+
+    document.getElementById('triggerHeartEffect').addEventListener('click', () => {
+        createEffect('💖🌹');
+    });
+
+    function createEffect(symbol) {
+        for (let i = 0; i < 20; i++) {
+            const span = document.createElement('span');
+            span.textContent = symbol;
+            span.style.position = 'absolute';
+            span.style.fontSize = '2rem';
+            span.style.left = Math.random() * 100 + 'vw';
+            span.style.top = Math.random() * 100 + 'vh';
+            document.body.appendChild(span);
+            setTimeout(() => span.remove(), 2000);
+        }
+    }
+</script>
+</body>
+</html>
